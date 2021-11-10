@@ -1,24 +1,50 @@
+/* CLASS COMPONENT 
+---------------------*/
 
-import React from 'react';
+// import {createContext, Component} from 'react';
 
-export const AuthContext =  React.createContext();
+// export const AuthContext = createContext();
+// export default class AuthContextProvider extends Component {
+//     state = {
+//         isAuthenticated: false,
+//     }
 
-class AuthContextProvider extends React.Component {
-    state = {
-        isAuthenticated: false,
+//     handleAuthToggle = () => {
+//         this.setState({isAuthenticated: !this.state.isAuthenticated})
+//         console.log(this.state.isAuthenticated);
+
+//     }
+
+//     render() { 
+//         return (
+//             <AuthContext.Provider value={{...this.state, handleAuthToggle: this.handleAuthToggle}}>
+//                 {this.props.children}
+//             </AuthContext.Provider>
+//         );
+//     }
+// }
+
+
+
+/* FUNCTION COMPONENT 
+----------------------------*/
+
+import { useState, createContext } from 'react';
+export const AuthContext = createContext();
+
+const AuthContextProvider = (props) => {
+    const [isAuthenticated, setIsAuthenticated] = useState(true);
+    const handleAuthToggle = () => {
+        setIsAuthenticated( isAuthenticated => !isAuthenticated)
+        console.log(isAuthenticated);
     }
 
-    handleAuthToggler = () => {
-        this.setState({isAuthenticated: !this.state.isAuthenticated})
-    }
-
-    render() { 
-        return (
-            <AuthContext.Provider value={{...this.state, handleAuthToggler: this.handleAuthToggler}}>
-                {this.props.children}
-            </AuthContext.Provider>
-        );
-    }
+    return (
+        <AuthContext.Provider value={{isAuthenticated, handleAuthToggle}}>
+            {props.children}
+        </AuthContext.Provider>
+            
+    );
 }
- 
+
 export default AuthContextProvider;

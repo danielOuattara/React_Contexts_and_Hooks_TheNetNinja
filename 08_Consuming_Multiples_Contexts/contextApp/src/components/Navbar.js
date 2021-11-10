@@ -43,7 +43,7 @@
 
 //--------------------------------------------------------------------------------
 
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { AuthContext } from '../contexts/AuthContext';
 import { ThemeContext } from './../contexts/ThemeContext';
 
