@@ -9,10 +9,10 @@ class ThemeContextProvider extends React.Component {
         this.state = {
             isLightTheme: true,
             light: { syntax: '#555', ui:'#ddd', bg: '#eee' },
-            dark: { syntax: '#ddd',  ui:'#333', bg: '#555' },   
+            dark: { syntax: '#ddd',  ui:'#333', bg: '#555' },
         }
     }
-    
+
     // state = {
     //     isLightTheme: true,
     //     light: { syntax: '#555', ui:'#ddd', bg: '#eee' },
@@ -23,15 +23,14 @@ class ThemeContextProvider extends React.Component {
         this.setState({isLightTheme: !this.state.isLightTheme})
     }
 
-    render() { 
+    render() {
         return (
-            <ThemeContext.Provider value={{...this.state, handleThemeToggler: this.handleThemeToggler}}>
-                {this.props.children}
+            <ThemeContext.Provider
+              value={{...this.state, handleThemeToggler: this.handleThemeToggler}}>
+                  {this.props.children}
             </ThemeContext.Provider>
         );
     }
 }
- 
+
 export default ThemeContextProvider;
-
-

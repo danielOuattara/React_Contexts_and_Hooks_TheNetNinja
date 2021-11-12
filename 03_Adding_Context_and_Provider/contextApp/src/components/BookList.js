@@ -8,8 +8,7 @@ export default class BookList extends Component {
                     <li>The way of King</li>
                     <li>The name of the wind</li>
                     <li>The final empire</li>
-                </ul>
-                
+                </ul>  
             </div>
         )
     }

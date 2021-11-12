@@ -5,13 +5,12 @@ import { v1 as uuidv1 } from 'uuid';
 import NewSongForm from "./NewSongForm";
 
 const SongList = () => {
-
     const [songs, setSongs] = useState([
         { title: "Almost Home", id: uuidv1() },
         { title: "Memory Gospel", id: uuidv1() },
         { title: " This Wild Darkness", id: uuidv1()},
     ]);
- 
+
     const[age,setAge] = useState(20)
 
     const handleAddSong = (newSong) => {
@@ -34,7 +33,7 @@ const SongList = () => {
         console.log("useEffect hook ran", age)
     }, [age]);
 
-    
+
 
     return (
         <div className="song-list">
@@ -50,6 +49,6 @@ const SongList = () => {
            <button onClick={() => setAge(age + 1)}>Add 1 to age: {age}</button>
         </div>
     );
-} 
+}
 
 export default SongList;

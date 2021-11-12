@@ -43,35 +43,19 @@
 /* Convert Navbar to function component and insert useContext to get data 
 --------------------------------------------------------------------------*/
 
-import React, { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
-import { ThemeContext } from './../contexts/ThemeContext';
+import { useContext } from 'react';
+import { BookContext } from '../contexts/BookContext';
 
 const Navbar = () => {
-        const { isAuthenticated, handleAuthToggler } = useContext(AuthContext ); 
-        const { isLightTheme, light, dark } = useContext(ThemeContext);
-        console.log("Navbar ===>");
-        console.log('isLightTheme  =' , isLightTheme);
-        console.log('light = ', light);
-        const theme = isLightTheme ? light : dark ;
-        console.log('theme =', theme);
+        const {books} = useContext(BookContext ); 
         return (
-            <>
-                <h1>Context App</h1>
-                {isAuthenticated ? <h3>User is authenticated</h3> : <h3>User is Not authenticate:</h3>}
-                <button onClick={handleAuthToggler}> Toggle Authentication Here</button>
-                <nav style= {{background: theme.ui, color: theme.syntax}}>
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
-                    </ul>
-                </nav>                                            
-            </>
+            <div className="navbar">
+                <h1>Reading List </h1>
+                <p> Curently you have { books.length} books to read </p>                         
+            </div>
         );
 }
-
-export default Navbar
+export default Navbar;
 
 
 

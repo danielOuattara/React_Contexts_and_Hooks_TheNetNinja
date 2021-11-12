@@ -1,4 +1,4 @@
-/* CLASS COMPONENT 
+/* CLASS COMPONENT
 ---------------------*/
 
 // import {createContext, Component} from 'react';
@@ -12,10 +12,9 @@
 //     handleAuthToggle = () => {
 //         this.setState({isAuthenticated: !this.state.isAuthenticated})
 //         console.log(this.state.isAuthenticated);
-
 //     }
 
-//     render() { 
+//     render() {
 //         return (
 //             <AuthContext.Provider value={{...this.state, handleAuthToggle: this.handleAuthToggle}}>
 //                 {this.props.children}
@@ -26,7 +25,7 @@
 
 
 
-/* FUNCTION COMPONENT 
+/* FUNCTION COMPONENT
 ----------------------------*/
 
 import { useState, createContext } from 'react';
@@ -43,7 +42,7 @@ const AuthContextProvider = (props) => {
         <AuthContext.Provider value={{isAuthenticated, handleAuthToggle}}>
             {props.children}
         </AuthContext.Provider>
-            
+
     );
 }
 

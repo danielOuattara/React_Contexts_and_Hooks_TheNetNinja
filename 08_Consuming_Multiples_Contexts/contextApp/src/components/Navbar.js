@@ -4,12 +4,12 @@
 // import { ThemeContext } from './../contexts/ThemeContext';
 
 // class Navbar extends Component {
-   
-//     render() {    
+
+//     render() {
 //         return (
 //             <AuthContext.Consumer>
 //                 { (context) => {
-//                     const { isAuthenticated, handleAuthToggler} = context;   
+//                     const { isAuthenticated, handleAuthToggler} = context;
 //                     return(
 //                         <>
 //                             {isAuthenticated ? <h3>User is authenticated</h3> : <h3>User is Not authenticate:</h3>}
@@ -38,7 +38,7 @@
 //         );
 //     }
 // }
- 
+
 // export default Navbar;
 
 //--------------------------------------------------------------------------------
@@ -48,13 +48,13 @@ import { AuthContext } from '../contexts/AuthContext';
 import { ThemeContext } from './../contexts/ThemeContext';
 
 class Navbar extends Component {
-    render() {    
+    render() {
         return (
             <AuthContext.Consumer>
                 { (authContext) => (
                     <ThemeContext.Consumer>
                         {(themeContext) => {
-                            const { isAuthenticated, handleAuthToggler} = authContext;   
+                            const { isAuthenticated, handleAuthToggler} = authContext;
                             const { isLightTheme, light, dark} = themeContext;
                             const theme = isLightTheme ? light : dark ;
                             return (
@@ -68,7 +68,7 @@ class Navbar extends Component {
                                             <li>About</li>
                                             <li>Contact</li>
                                         </ul>
-                                    </nav>                                            
+                                    </nav>
                                 </>
                             );
                         }}
@@ -78,5 +78,5 @@ class Navbar extends Component {
         );
     }
 }
- 
+
 export default Navbar;

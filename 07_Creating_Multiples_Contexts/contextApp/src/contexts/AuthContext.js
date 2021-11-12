@@ -1,20 +1,15 @@
 
-import {Component, createContext} from 'react';
+import { Component, createContext } from 'react';
 
 export const AuthContext =  createContext();
 
 class AuthContextProvider extends Component {
     constructor(props) {
         super(props)
-    
         this.state = {
             isAuthenticate: false,
         }
     }
-    
-    // state = {
-    //     isAuthenticate: false,
-    // }
 
     handleAuthToggle = () => {
         this.setState({
@@ -22,13 +17,13 @@ class AuthContextProvider extends Component {
         })
     }
 
-    render() { 
+    render() {
         return (
-            <AuthContext.Provider value={{/* ...this.state, */ handleAuthToggle: this.handleAuthToggle}}>
+            <AuthContext.Provider value={{...this.state, handleAuthToggle: this.handleAuthToggle}}>
                 {this.props.children}
             </AuthContext.Provider>
         );
     }
 }
- 
+
 export default AuthContextProvider;

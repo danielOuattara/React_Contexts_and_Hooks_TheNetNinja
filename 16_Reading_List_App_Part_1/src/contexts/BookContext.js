@@ -1,71 +1,74 @@
 
-import React, {Component, createContext, useState} from "react";
-import { v1 as uuidv1 } from 'uuid';
+/* BookContext using class component ! 
+--------------------------------------------*/
 
-export const BookContext = createContext();
+// import {Component, createContext} from "react";
+// import { v1 as uuidv1 } from 'uuid';
 
-export class BookContextProvider extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            books: [           
-                {title: "The way of King", author:"Rod Stewart", id: uuidv1() },
-                {title: "The name of the wind", author:"Big Joe", id: uuidv1() },
-                {title: "The final empire", author:" Lemon Ice", id: uuidv1() },
-            ]
-        }
+// export const BookContext = createContext();
 
-        this.handleAddBook = this.handleAddBook.bind(this)
-        this.handleRemoveBook = this.handleAddBook.bind(this)
-    }
+// export class BookContextProvider extends Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             books: [           
+//                 {title: "The way of King", author:"Rod Stewart", id: uuidv1() },
+//                 {title: "The name of the wind", author:"Big Joe", id: uuidv1() },
+//                 {title: "The final empire", author:" Lemon Ice", id: uuidv1() },
+//             ]
+//         }
 
-    handleAddBook = (title, author) => {
-        this.setState([...this.state.books, {title, author, id: uuidv1()}])
-    };
+//         this.handleAddBook = this.handleAddBook.bind(this)
+//         this.handleRemoveBook = this.handleAddBook.bind(this)
+//     }
 
-    handleRemoveBook = (id) => {
-        this.setState(this.state.books.filter((book) => book.id !== id))
-    };
+//     handleAddBook = (title, author) => {
+//         this.setState([...this.state.books, {title, author, id: uuidv1()}])
+//     };
 
-    render() {
-        return (
-            <BookContext.Provider value= {{...this.state, handleAddBook: this.handleAddBook, handleRemoveBook:this.handleRemoveBook}}>
-                {this.props.children}
-            </BookContext.Provider>
-        );
-    }
-}
+//     handleRemoveBook = (id) => {
+//         this.setState(this.state.books.filter((book) => book.id !== id))
+//     };
 
-export default BookContextProvider;
+//     render() {
+//         return (
+//             <BookContext.Provider value= {{...this.state, handleAddBook: this.handleAddBook, handleRemoveBook:this.handleRemoveBook}}>
+//                 {this.props.children}
+//             </BookContext.Provider>
+//         );
+//     }
+// }
+// export default BookContextProvider;
 
 
 /* BookContext using function component ! 
 --------------------------------------------*/
 
-// import React, { createContext, useState} from "react";
-// import { v1 as uuidv1 } from 'uuid';
+import { createContext, useState } from "react";
+import { v1 as uuidv1 } from 'uuid';
 
-// export const BookContext = createContext();
+export const BookContext = createContext();
 
-// const BookContextProvider = (props) => {
-//     const [books, setBooks] = useState([           
-//         {title: "The way of King", author:"Rod Stewart", id: uuidv1() },
-//         {title: "The name of the wind", author:"Big Joe", id: uuidv1() },
-//         {title: "The final empire", author:" Lemon Ice", id: uuidv1() },
-//     ]);
+const BookContextProvider = (props) => {
+    const [books, setBooks] = useState([           
+        {title: "The way of King", author:"Rod Stewart", id: uuidv1() },
+        {title: "The name of the wind", author:"Big Joe", id: uuidv1() },
+        {title: "The final empire", author:" Lemon Ice", id: uuidv1() },
+    ]);
 
-//     const handleAddBook = (title, author) => {
-//         setBooks([...books, {title, author, id: uuidv1()}])
-//     };
+    const handleAddBook = (title, author) => {
+        setBooks([...books, {title, author, id: uuidv1()}])
+    };
 
-//     const handleRemoveBook = (id) => {
-//         setBooks(books.filter((book) => book.id !== id))
-//     };
+    const handleRemoveBook = (id) => {
+        const keptBooks = books.filter( (book) => book.id !== id)
+        setBooks(keptBooks);
+    };
 
-//     return (
-//         <BookContext.Provider value={{books, handleAddBook, handleRemoveBook}}>
-//             {props.children}
-//         </BookContext.Provider>
-//     );
-// }
-// export default BookContextProvider;
+    return (
+        <BookContext.Provider value={{books, handleAddBook, handleRemoveBook}}>
+            {props.children}
+        </BookContext.Provider>
+    );
+}
+export default BookContextProvider;

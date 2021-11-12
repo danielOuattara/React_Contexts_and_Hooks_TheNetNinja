@@ -1,5 +1,5 @@
 
-/* BOOKLIST CLASS COMPONENT 
+/* BOOKLIST CLASS COMPONENT
 -------------------------------*/
 
 // import { Component } from 'react'
@@ -17,15 +17,15 @@
 //                         <BookContext.Consumer>
 //                             {(bookContext) => {
 //                                 const { books } = bookContext;
-//                                 return ( 
-//                                     <div 
-//                                         className="book-list" 
+//                                 return (
+//                                     <div
+//                                         className="book-list"
 //                                         style= {{background: theme.bg, color: theme.syntax}} >
 //                                         <ul>
 //                                             {books.map( (book) => {
 //                                                 return <li key={book.id} style= {{background: theme.ui}}> {book.title}</li>
 //                                             })}
-//                                         </ul> 
+//                                         </ul>
 //                                     </div>
 //                                 );
 //                             }}
@@ -38,7 +38,7 @@
 // }
 
 
-/* BOOKLIST FUCNTION COMPONENT 
+/* BOOKLIST FUCNTION COMPONENT
 -----------------------------------*/
 import React, { useContext } from 'react'
 import { BookContext } from './../contexts/BookContext';
@@ -48,17 +48,17 @@ const Booklist = () => {
     const {isLightTheme, light, dark} = useContext(ThemeContext);
     const theme = isLightTheme ? light : dark;
     const { books } = useContext(BookContext);
-    return ( 
-        <div 
-            className="book-list" 
+    return (
+        <div
+            className="book-list"
             style= {{background: theme.bg, color: theme.syntax}} >
             <ul>
                 {books.map( (book) => {
-                    return <li key={book.id} style= {{background: theme.ui}}> {book.title}</li>
+                    return <li key={book.id} style={{background: theme.ui}}> {book.title}</li>
                 })}
-            </ul> 
+            </ul>
         </div>
      );
 }
- 
+
 export default Booklist;

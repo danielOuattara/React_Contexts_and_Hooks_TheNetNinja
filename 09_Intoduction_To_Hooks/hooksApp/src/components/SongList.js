@@ -6,9 +6,8 @@ const SongList = () => {
                 <li>This Wild Darkness</li>
                 <li>Memory Gospel</li>
             </ul>
-            
         </div>
-    )
+    );
 }
 
 export default SongList;

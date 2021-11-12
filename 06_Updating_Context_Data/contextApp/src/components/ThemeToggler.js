@@ -1,10 +1,10 @@
 
 // METHOD 1 -------------------
 
-// import React from "react";
+// import {Component} from "react";
 // import { ThemeContext } from "./../contexts/ThemeContext";
 
-// class ThemeToggler extends React.Component {
+// class ThemeToggler extends Component {
 //     static contextType = ThemeContext;
 //     render() {
 //        const {handleThemeToggler} = this.context;
@@ -12,7 +12,7 @@
 //             <button onClick={handleThemeToggler}> Click to toggle theme</button>);
 //     }
 // }
- 
+
 // export default ThemeToggler;
 
 // METHOD 2 -------------------
@@ -20,12 +20,12 @@
 import React from "react";
 import { ThemeContext } from "./../contexts/ThemeContext";
 
-class ThemeToggler extends React.Component {  
+class ThemeToggler extends React.Component {
     render() {
         return (
             <ThemeContext.Consumer>
-                {(context) => {
-                    const {handleThemeToggler} = context;
+                { (context) => {
+                    const { handleThemeToggler } = context;
                     return (
                         <button onClick={handleThemeToggler}> Click to toggle theme</button>
                     );
@@ -34,5 +34,5 @@ class ThemeToggler extends React.Component {
         );
     }
 }
- 
+
 export default ThemeToggler;
