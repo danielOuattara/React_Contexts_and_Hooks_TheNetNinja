@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { ThemeContext } from './../contexts/ThemeContext';
 
 export default class BookList extends Component {
-    static contextType = ThemeContext; // This technic is only available in class component,
-                                       // because of 'static' declaration
+    static contextType = ThemeContext; // indicate what context we want to consume
+    // This declaration above is only available in class component, because of 'static' declaration
     render() {
         // console.log('ThemeContext = ', ThemeContext)
         console.log("this.context = ", this.context);

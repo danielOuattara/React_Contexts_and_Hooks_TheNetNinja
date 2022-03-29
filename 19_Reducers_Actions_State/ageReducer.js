@@ -24,42 +24,40 @@
 --> advantage: use one 'dispatch' to underline all the other functions
 --------------------------------------------------------------------------*/
 
-import { createContext, useState, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 const AgeContext = createContext();
 
 const ageReducer = (state, action) => {
-    switch(action.type) {
-        case 'ADD_ONE': 
-        return {
-            state : state + 1
-        };
-        case 'ADD_FIVE': 
-        return {
-            state : state + 5
-        };
-        case 'ADD_NUM': 
-        return {
-            state : state + action.payload
-        };
-        default:
-            return state;
-
-    }
-}
-
+  switch (action.type) {
+    case "ADD_ONE":
+      return {
+        state: state + 1,
+      };
+    case "ADD_FIVE":
+      return {
+        state: state + 5,
+      };
+    case "ADD_NUM":
+      return {
+        state: state + action.payload,
+      };
+    default:
+      return state;
+  }
+};
 
 const AgeContextProvider = (props) => {
-    const[age, dispatch] = useReducer(ageReducer, 20);
+  const [age, dispatch] = useReducer(ageReducer, 20);
 
-    dispatch({ type: 'ADD_ONE'});
-    dispatch({ type: 'ADD_FIVE'});
-    dispatch({ type: 'ADD_NUM', payload: 7 })
+  return (
+    <AgeContext.Provider value={{ age, dispatch }}>
+      {props.children}
+    </AgeContext.Provider>
+  );
+};
 
-    return (
-        <AgeContext.Provider value={ age, dispatch}>
-            {props.children}
-        </AgeContext.Provider>
-    )
-
-}
+// somewhere in a consuming composant
+dispatch({ type: "ADD_ONE" });
+dispatch({ type: "ADD_FIVE" });
+dispatch({ type: "ADD_NUM", payload: 7 });

@@ -23,27 +23,25 @@
 //     }
 // }
 
-
-
 /* FUNCTION COMPONENT
 ----------------------------*/
 
-import { useState, createContext } from 'react';
+import { useState, createContext } from "react";
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
-    const [isAuthenticated, setIsAuthenticated] = useState(true);
-    const handleAuthToggle = () => {
-        setIsAuthenticated( isAuthenticated => !isAuthenticated)
-        console.log(isAuthenticated);
-    }
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
-    return (
-        <AuthContext.Provider value={{isAuthenticated, handleAuthToggle}}>
-            {props.children}
-        </AuthContext.Provider>
+  const handleAuthToggle = () => {
+    setIsAuthenticated((isAuthenticated) => !isAuthenticated);
+    console.log(isAuthenticated);
+  };
 
-    );
-}
+  return (
+    <AuthContext.Provider value={{ isAuthenticated, handleAuthToggle }}>
+      {props.children}
+    </AuthContext.Provider>
+  );
+};
 
 export default AuthContextProvider;

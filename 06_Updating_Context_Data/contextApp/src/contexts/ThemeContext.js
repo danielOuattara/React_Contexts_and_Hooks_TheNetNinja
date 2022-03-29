@@ -13,12 +13,6 @@ class ThemeContextProvider extends React.Component {
         }
     }
 
-    // state = {
-    //     isLightTheme: true,
-    //     light: { syntax: '#555', ui:'#ddd', bg: '#eee' },
-    //     dark: { syntax: '#ddd',  ui:'#333', bg: '#555' },
-    // }
-
     handleThemeToggler = () => {
         this.setState({isLightTheme: !this.state.isLightTheme})
     }

@@ -1,6 +1,6 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import BookList from './components/BookList';
+import React from "react";
+import Navbar from "./components/Navbar";
+import BookList from "./components/BookList";
 
 function App() {
   return (
