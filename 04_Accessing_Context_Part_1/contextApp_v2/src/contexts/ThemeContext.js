@@ -3,7 +3,6 @@ import { Component, createContext } from "react";
 export const ThemeContext = createContext();
 
 export default class ThemeContextProvider extends Component {
-  
   constructor(props) {
     super(props);
     this.state = {
