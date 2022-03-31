@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { BookContext } from "./../contexts/BookContext";
 
 const BookDetails = ({ title, author, id }) => {
+  
   const { dispatch } = useContext(BookContext);
 
   const removeBook = () => {
