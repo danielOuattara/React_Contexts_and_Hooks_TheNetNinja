@@ -30,7 +30,8 @@ function BookList() {
   return (
     <div
       className="book-list"
-      style={{ background: theme.bg, color: theme.syntax }}>
+      style={{ background: theme.bg, color: theme.syntax }}
+    >
       <ul>
         <li style={{ background: theme.ui }}>The way of King</li>
         <li style={{ background: theme.ui }}>The name of the wind</li>

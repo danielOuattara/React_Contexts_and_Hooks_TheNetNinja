@@ -11,6 +11,7 @@ export default class ThemeContextProvider extends Component {
       dark: { syntax: "#ddd", ui: "#333", bg: "#555" },
     };
   }
+  
   render() {
     return (
       <ThemeContext.Provider value={{ ...this.state }}>

@@ -113,8 +113,8 @@ function AddBookForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!book.author || !book.title) { 
-      return
+    if (!book.author || !book.title) {
+      return;
     }
     dispatch({
       type: "ADD_BOOK",

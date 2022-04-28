@@ -3,11 +3,6 @@ export const bookReducer = (state, action) => {
     case "ADD_BOOK":
       return [
         ...state,
-        // {
-        //   title: action.book.title,
-        //   author: action.book.author,
-        //   id: new Date().getTime().toString(),
-        // },
         {
             title: action.payload.book.title,
             author: action.payload.book.author,
