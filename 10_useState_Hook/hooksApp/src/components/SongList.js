@@ -108,8 +108,7 @@ const SongList = () => {
       <button onClick={handleAddSong}> Add Song </button>
       <ul>
         {songs.map((song) => {
-          const { id, title } = song;
-          return <li key={id}>{title}</li>;
+          return <li key={song.id}>{song.title}</li>;
         })}
       </ul>
     </div>

@@ -1,6 +1,12 @@
 import { v1 as uuidv1 } from "uuid";
 
-export const bookReducer = (state, action) => {
+const initialState = [
+  { title: "The way of King", author: "Rod Stewart", id: uuidv1() },
+  { title: "The name of the wind", author: "Big Joe", id: uuidv1() },
+  { title: "The final empire", author: " Lemon Ice", id: uuidv1() },
+];
+
+export const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_BOOK":
       return [

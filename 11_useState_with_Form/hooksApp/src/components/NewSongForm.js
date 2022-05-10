@@ -19,7 +19,6 @@ const NewSongForm = ({ handleAddSong }) => {
       <label htmlFor="">Song Title : </label>
       <input
         type="text"
-        required
         placeholder="Enter a title"
         onChange={handleNewSongTitle}
         value={title}

@@ -35,7 +35,7 @@ import { createContext, useState } from "react";
 export const BookContext = createContext();
 
 const BookContextProvider = (props) => {
-  const [books, setbBooks] = useState([
+  const [books, setBooks] = useState([
     { title: "The way of King", id: 1 },
     { title: "Name of the wind", id: 2 },
     { title: "The final empire", id: 3 },

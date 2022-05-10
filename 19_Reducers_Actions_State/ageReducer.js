@@ -1,5 +1,5 @@
-/* useContext way 
---------------------*/
+/* useContext way ; initial code base 
+---------------------------------------*/
 
 // import { createContext, useState } from "react";
 

@@ -81,13 +81,8 @@ import { bookReducer } from "../reducers/bookReducer";
 export const BookContext = createContext();
 
 const BookContextProvider = (props) => {
-  const initialBooks = [
-    { title: "The way of King", author: "Rod Stewart", id: uuidv1() },
-    { title: "The name of the wind", author: "Big Joe", id: uuidv1() },
-    { title: "The final empire", author: " Lemon Ice", id: uuidv1() },
-  ];
 
-  const [books, dispatch] = useReducer(bookReducer, initialBooks, () => {
+  const [books, dispatch] = useReducer(bookReducer, [], () => {
     const localData = localStorage.getItem("books");
     return localData ? JSON.parse(localData) : [];
   });

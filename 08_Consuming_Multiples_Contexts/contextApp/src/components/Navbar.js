@@ -71,7 +71,6 @@ class Navbar extends Component {
                     <h3>User is Not authenticate:</h3>
                   )}
                   <button onClick={handleAuthToggler}>
-                    {" "}
                     Toggle Authentication
                   </button>
                   <nav style={{ background: theme.ui, color: theme.syntax }}>

@@ -75,19 +75,12 @@
 -----------------------------------------------------------*/
 
 import { createContext, useReducer } from "react";
-import { v1 as uuidv1 } from "uuid";
 import { bookReducer } from "../reducers/bookReducer";
 
 export const BookContext = createContext();
 
-const initialState = [
-  { title: "The way of King", author: "Rod Stewart", id: uuidv1() },
-  { title: "The name of the wind", author: "Big Joe", id: uuidv1() },
-  { title: "The final empire", author: " Lemon Ice", id: uuidv1() },
-];
-
 const BookContextProvider = (props) => {
-  const [books, dispatch] = useReducer(bookReducer, initialState);
+  const [books, dispatch] = useReducer(bookReducer, []);
 
   return (
     <BookContext.Provider value={{ books, dispatch }}>

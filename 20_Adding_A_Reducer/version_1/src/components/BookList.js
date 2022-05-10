@@ -1,30 +1,3 @@
-
-/* BOOKLIST FUNCTION COMPONENT 
------------------------------------*/
-
-import { useContext } from 'react';
-import { BookContext } from './../contexts/BookContext';
-import  BookDetails from './BookDetails';
-
-const Booklist = () => {
-    const { books } = useContext(BookContext);
-    return books.length ?  
-        (<div className="book-list" >
-            <ul>
-                { books.map( (book) => {
-                    return (<BookDetails book={book} key={book.id} />)
-                })}
-            </ul>
-        </div>)
-        : 
-        (<div className="empty"> No Books to read; free time </div>)
-    ;
-}
- 
-export default Booklist;
-
-
-
 /* BOOKLIST CLASS COMPONENT 
 -------------------------------*/
 
@@ -38,7 +11,7 @@ export default Booklist;
 //             <BookContext.Consumer>
 //                 {(bookContext) => {
 //                     const { books } = bookContext;
-//                     return books.length ?  
+//                     return books.length ?
 //                         (<div className="book-list" >
 //                             <ul>
 //                                 { books.map( (book) => {
@@ -46,7 +19,7 @@ export default Booklist;
 //                                 })}
 //                             </ul>
 //                         </div>)
-//                         : 
+//                         :
 //                         (<div className="empty"> No Books to read; free time </div>)
 //                     ;
 //                 }}
@@ -55,4 +28,26 @@ export default Booklist;
 //     }
 // }
 
+/* BOOKLIST FUNCTION COMPONENT 
+-----------------------------------*/
 
+import { useContext } from "react";
+import { BookContext } from "./../contexts/BookContext";
+import BookDetails from "./BookDetails";
+
+const Booklist = () => {
+  const { books } = useContext(BookContext);
+  return books.length ? (
+    <div className="book-list">
+      <ul>
+        {books.map((book) => {
+          return <BookDetails book={book} key={book.id} />;
+        })}
+      </ul>
+    </div>
+  ) : (
+    <div className="empty"> No Books to read; free time </div>
+  );
+};
+
+export default Booklist;

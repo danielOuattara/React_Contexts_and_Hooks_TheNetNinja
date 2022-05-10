@@ -4,13 +4,12 @@
 // import { ThemeContext } from "./../contexts/ThemeContext";
 
 // class ThemeToggler extends React.Component {
-//     static contextType = ThemeContext
+//   static contextType = ThemeContext;
 
-//     render() {
-//        const  {handleThemeToggle} = this.context;
-//         return (
-//             <button onClick={handleThemeToggle}> Click to toggle theme</button>);
-//     }
+//   render() {
+//     const { handleThemeToggle } = this.context;
+//     return <button onClick={handleThemeToggle}> Click to toggle theme</button>;
+//   }
 // }
 
 // export default ThemeToggler;

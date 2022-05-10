@@ -1,41 +1,46 @@
-// import React, { Component } from 'react';
-// import { AuthContext } from '../contexts/AuthContext';
-// import { ThemeContext } from './../contexts/ThemeContext';
+// import React, { Component } from "react";
+// import { AuthContext } from "../contexts/AuthContext";
+// import { ThemeContext } from "./../contexts/ThemeContext";
 
 // class Navbar extends Component {
+//   render() {
+//     return (
+//       <AuthContext.Consumer>
+//         {(context) => {
+//           const { isAuthenticated, handleAuthToggler } = context;
+//           return (
+//             <>
+//               {isAuthenticated ? (
+//                 <h3>User is authenticated</h3>
+//               ) : (
+//                 <h3>User is Not authenticate:</h3>
+//               )}
+//               <button onClick={handleAuthToggler}>
+//                 Toggle Authentication
+//               </button>
 
-//     render() {
-//         return (
-//             <AuthContext.Consumer>
-//                 { (context) => {
-//                     const { isAuthenticated, handleAuthToggler} = context;
-//                     return(
-//                         <>
-//                             {isAuthenticated ? <h3>User is authenticated</h3> : <h3>User is Not authenticate:</h3>}
-//                             <button onClick={handleAuthToggler}> Toggle Authentication</button>
-
-//                             <ThemeContext.Consumer>
-//                                 {(context) => {
-//                                     const { isLightTheme, light, dark} = context;
-//                                     const theme = isLightTheme ? light : dark ;
-//                                     return (
-//                                         <nav style= {{background: theme.ui, color: theme.syntax}}>
-//                                             <h1>Context App</h1>
-//                                             <ul>
-//                                                 <li>Home</li>
-//                                                 <li>About</li>
-//                                                 <li>Contact</li>
-//                                             </ul>
-//                                         </nav>
-//                                     );
-//                                 }}
-//                             </ThemeContext.Consumer>
-//                         </>
-//                     );
+//               <ThemeContext.Consumer>
+//                 {(context) => {
+//                   const { isLightTheme, light, dark } = context;
+//                   const theme = isLightTheme ? light : dark;
+//                   return (
+//                     <nav style={{ background: theme.ui, color: theme.syntax }}>
+//                       <h1>Context App</h1>
+//                       <ul>
+//                         <li>Home</li>
+//                         <li>About</li>
+//                         <li>Contact</li>
+//                       </ul>
+//                     </nav>
+//                   );
 //                 }}
-//             </AuthContext.Consumer>
-//         );
-//     }
+//               </ThemeContext.Consumer>
+//             </>
+//           );
+//         }}
+//       </AuthContext.Consumer>
+//     );
+//   }
 // }
 
 // export default Navbar;
@@ -64,7 +69,9 @@ class Navbar extends Component {
                   ) : (
                     <h3>User is Not authenticate:</h3>
                   )}
-                  <button onClick={handleAuthToggler}>Toggle Authentication</button>
+                  <button onClick={handleAuthToggler}>
+                    Toggle Authentication
+                  </button>
                   <nav style={{ background: theme.ui, color: theme.syntax }}>
                     <ul>
                       <li>Home</li>
