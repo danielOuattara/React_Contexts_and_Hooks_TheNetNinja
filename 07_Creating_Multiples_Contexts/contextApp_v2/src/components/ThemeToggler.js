@@ -4,7 +4,7 @@
 // class ThemeToggler extends Component {
 //   static contextType = ThemeContext
 //   render() {
-//     return <button onClick={this.context.toggleTheme}>Toogle Theme</button>;
+//     return <button onClick={this.context.toggleTheme}>Toggle Theme</button>;
 //   }
 // }
 
@@ -16,12 +16,11 @@ import { Component } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
 class ThemeToggler extends Component {
-  static contextType = ThemeContext;
   render() {
     return (
       <ThemeContext.Consumer>
         {(context) => (
-          <button onClick={context.toggleTheme}>Toogle Theme</button>
+          <button onClick={context.toggleTheme}>Toggle Theme</button>
         )}
       </ThemeContext.Consumer>
     );
