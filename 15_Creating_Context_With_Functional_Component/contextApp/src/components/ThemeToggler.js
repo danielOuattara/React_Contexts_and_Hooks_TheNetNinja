@@ -1,4 +1,3 @@
-
 /* METHOD 1 : USE 'static contextType' IN CLASS COMPONENT (ONLY)
 ------------------------------------------------------------------*/
 
@@ -6,20 +5,18 @@
 // import { ThemeContext } from "./../contexts/ThemeContext";
 
 // class ThemeToggler extends React.Component {
-    //     static contextType = ThemeContext
-    
-    //     render() {
-        //        const  {handleThemeToggle} = this.context;
-        //         return (
-            //             <button onClick={handleThemeToggle}> Click to toggle theme</button>);
-            //     }
-            // }
-            
-            // export default ThemeToggler;
-            
-            
-            // METHOD 2 -------------------
+//     static contextType = ThemeContext
 
+//     render() {
+//        const  {handleThemeToggle} = this.context;
+//         return (
+//             <button onClick={handleThemeToggle}> Click to toggle theme</button>);
+//     }
+// }
+
+// export default ThemeToggler;
+
+// METHOD 2 -------------------
 
 /* METHOD 2 : USE 'ThemeContext.Consumer' IN CLASS COMPONENT
 ------------------------------------------------------------------*
@@ -52,11 +49,14 @@
 import { useContext } from "react";
 import { ThemeContext } from "./../contexts/ThemeContext";
 
-const ThemeToggler = () => { 
-        const { handleThemeToggle } = useContext(ThemeContext);
-        return(
-            <button onClick={handleThemeToggle}> Click here to toggle the theme </button>
-        );
-}
- 
+const ThemeToggler = () => {
+  const { handleThemeToggler } = useContext(ThemeContext);
+  return (
+    <button onClick={handleThemeToggler}>
+      {" "}
+      Click here to toggle the theme{" "}
+    </button>
+  );
+};
+
 export default ThemeToggler;
