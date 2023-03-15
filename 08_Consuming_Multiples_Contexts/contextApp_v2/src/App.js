@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import BookList from "./components/BookList";
 import ThemeContextProvider from "./contexts/ThemeContext";
@@ -10,7 +9,7 @@ function App() {
     <div className="App">
       <ThemeContextProvider>
         <AuthContextProvider>
-          <Navbar  />
+          <Navbar />
           <BookList />
           <ThemeToggler />
         </AuthContextProvider>
