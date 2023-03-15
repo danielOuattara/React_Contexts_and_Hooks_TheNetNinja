@@ -39,16 +39,16 @@
 
 //------------------------------------------------------------------------------------
 
-/* Convert ThemeToggler to function component and insert useContext to get data */
+/* 
+Convert ThemeToggler to function component 
+and insert useContext to get data */
 
 // method 3 -----------------------------
 
 import React, { useContext } from "react";
 import { ThemeContext } from "./../contexts/ThemeContext";
 
-const ThemeToggler = () => {
+export default function ThemeToggler() {
   const { handleThemeToggle } = useContext(ThemeContext);
   return <button onClick={handleThemeToggle}> Click to toggle theme</button>;
-};
-
-export default ThemeToggler;
+}
