@@ -60,8 +60,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 
-const Booklist = () => {
-  // const { isLightTheme, light, dark } = this.context;  // NOT POSSIBLE IN FUNCTION COMPONENT
+export default function BookList() {
   const { isLightTheme, light, dark } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
   return (
@@ -76,6 +75,4 @@ const Booklist = () => {
       </ul>
     </div>
   );
-};
-
-export default Booklist;
+}
